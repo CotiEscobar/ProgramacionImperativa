@@ -31,8 +31,28 @@ function generarMatriz10por10(num1, num2) {
   return matrizNueva;
 }
 let matriz10por10 = generarMatriz10por10(10, 10);
-console.table(matriz10por10);
+//console.table(matriz10por10);
+
 /*Por último, vamos a generar dos funciones:
 a) Una va a sumar los valores en la diagonal marcada en rojo.
 b) La otra va a marcar los valores de la diagonal marcada en verde.
 Ambas funciones deben devolver un resultado único.*/
+let matrizDe10 = matrixBuilder();
+ 
+function sumaAscendente(matriz) {
+  let sumatoria = 0;
+  for (let i = 0; i < matriz.length; i++) {
+    sumatoria += matriz[i][i];
+  }
+  return sumatoria;
+}
+console.log(sumaAscendente(matrizDe10));
+ 
+function sumaDescendente(matriz) {
+  let sumatoria = 0;
+  for (let i = 0; i < matriz.length; i++) {
+    sumatoria += matriz[i][matriz.length - (1 + i)];
+  }
+  return sumatoria;
+}
+console.log(sumaDescendente(matrizDe10));

@@ -37,4 +37,30 @@ function totalMes(arr){
     }
     return sumatoria;
 }
-console.log(totalMes(mes));
+//console.log(totalMes(mes));
+/* Obtener cuál fue la semana que más gastos se realizaron. Indicar el día que más gastos se realizaron.*/
+
+/*DIA DE MAYOR COSTO*/
+function diaMayorCosto(arr){ 
+    let elMayor = arr[0][0];
+    for(let i=0; i<arr.length; i++){
+        for(let j=1; j<arr[i].length; j++){
+            if (arr[i][j] > elMayor){ 
+                elMayor = arr[i][j];
+            }
+        }
+    }
+    return elMayor;
+}
+//console.log(diaMayorCosto(mes));
+/*SEMANA DE MAYOR COSTO*/
+function semanaMayorCosto(arr,sem){
+    let sumatoria = 0;
+
+    for (let i = 0; i < arr[sem].length; i++){
+            sumatoria += arr[sem][i];
+    }
+    return sumatoria
+}
+console.log(semanaMayorCosto(mes,2));
+

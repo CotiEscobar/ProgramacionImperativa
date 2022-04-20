@@ -53,14 +53,4 @@ function diaMayorCosto(arr){
     return elMayor;
 }
 //console.log(diaMayorCosto(mes));
-/*SEMANA DE MAYOR COSTO*/
-function semanaMayorCosto(arr,sem){
-    let sumatoria = 0;
-
-    for (let i = 0; i < arr[sem].length; i++){
-            sumatoria += arr[sem][i];
-    }
-    return sumatoria
-}
-console.log(semanaMayorCosto(mes,2));
-
+/*SEMANA DE MAYOR COSTO                 NO ME SALIO*/

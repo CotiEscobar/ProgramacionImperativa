@@ -31,8 +31,22 @@ function generarMatriz10por10(num1, num2) {
   }
   return matrizNueva;
 }
-let matriz10por10 = generarMatriz10por10(10, 10);
+//let matriz10por10 = generarMatriz10por10(10, 10);
 //console.table(matriz10por10);
+
+//Generador de matriz con numeros aleatorios
+function generadorMatrices(num1,num2){
+  let matrizNueva = [];
+  for (let i=0; i<num1; i++){
+      matrizNueva.push([]);
+      for (let j=0; j<num2; j++){
+          let num = Math.floor(Math.random() * 10);
+          matrizNueva[i].push(num)
+      }
+  }
+  return matrizNueva;
+}
+//console.table(generadorMatrices(5,5));
 /*** 3 ***/
 /* a) crear una función que nos retorne la sumatoria de la primer y última columna (sumar la primera Y ya la última)
    b) crear una función que nos retorne la sumatoria de la quinta y sexta fila (la suma de ambas)*/
@@ -48,20 +62,21 @@ let matrix = [
   [81, 82, 83, 84, 85, 86, 87, 88, 89, 90],
   [91, 92, 93, 94, 95, 96, 97, 98, 99, 100],
 ];
-function sumarPrimerColumna(){
+
+function sumarPrimerYUltimaColumna(){
 sumatoria = 0;
 for (let i=0; i<matrix.length;i++){
-  for(let j=0; j<matrix[i].length;j+=9){
+  for(let j=0; j<matrix[i].length; j+= matrix[i].length - 1){
       sumatoria += matrix[i][j]
   }
 }
 return sumatoria;
 }
-//console.log(sumarPrimerColumna());
+//console.log(sumarPrimerYUltimaColumna());
 
 function sumarQuintaYSextaFila(){
   sumatoria = 0;
-  for(let i=5;i<=6;i++){
+  for(let i=4;i<=5;i++){
     for(let j=0; j<matrix[i].length;j++){
       sumatoria += matrix[i][j]
     }
@@ -69,6 +84,7 @@ function sumarQuintaYSextaFila(){
 return sumatoria;
 }
 //console.log(sumarQuintaYSextaFila());
+
 /*Por último, vamos a generar dos funciones:
 c) Una va a sumar los valores en la diagonal marcada en rojo.
 d) La otra va a marcar los valores de la diagonal marcada en verde.
